@@ -57,7 +57,7 @@ namespace Tylerfy.Controllers
             FileStream inStream = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
             MemoryStream memStream = new MemoryStream();
 
-            Instructions ins = new Instructions(string.Format("w={0}&h={1}&anchor={2}&{3}", width, height, imgAnchor, Request.Url.Query.Replace("?", "")));
+            Instructions ins = new Instructions(string.Format("w={0}&h={1}&mode=crop&anchor={2}&{3}", width, height, imgAnchor, Request.Url.Query.Replace("?", "")));
             ImageJob job = new ImageJob(inStream, memStream, ins);
             ImageBuilder.Current.Build(job);
 
