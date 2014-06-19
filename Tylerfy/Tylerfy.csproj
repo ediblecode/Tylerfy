@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Js\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
