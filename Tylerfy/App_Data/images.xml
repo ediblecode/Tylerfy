@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<images>
-	<image file="1.jpg" x-pos="78" y-pos="26" />
-	<image file="2.jpg" x-pos="27" y-pos="27" />
-	<image file="3.jpg" x-pos="65" y-pos="40" />
-	<image file="4.jpg" x-pos="30" y-pos="24" />
-<images>
+<images path="C:\Development\Projects\amaze\Lexus\Tylerfy\Tylerfy\app_data\">
+  <!--image path="live\IMG_20131205_210812.jpg" anchor="topcenter" />
+  <image path="live\IMG_20131205_210856.jpg" anchor="topright" />
+  <image path="live\IMG_20140516_080519.jpg" anchor="topcenter" />
+  <image path="live\IMG_20140516_080530.jpg" anchor="middleright" />
+  <image path="live\IMG_20140519_122343.jpg" anchor="middleleft" />
+  <image path="live\IMG_20140521_122646.jpg" anchor="middlecenter" />
+  <image path="live\IMG_20140521_122700.jpg" anchor="middlecenter" />
+  <image path="live\IMG_20140523_125943.jpg" anchor="topright" />
+  <image path="live\IMG_20140603_114453.jpg" anchor="bottomcenter" />
+  <image path="live\IMG_20140603_121625.jpg" anchor="middletop" />
+  <image path="live\IMG_20140603_123012.jpg" anchor="bottomleft" />
+  <image path="live\IMG_20140609_123813.jpg" anchor="middlecenter" />
+  <image path="live\IMG_20140610_133628.jpg" anchor="bottomcenter" />
+  <image path="live\IMG_20140613_125014.jpg" anchor="topleft" /-->
+  <image path="1.jpg" anchor="topright" />
+  <image path="2.jpg" anchor="topleft" />
+  <image path="3.jpg" anchor="middleright" />
+  <image path="4.jpg" anchor="topleft" />
+</images>
