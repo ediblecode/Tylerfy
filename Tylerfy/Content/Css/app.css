@@ -72,6 +72,14 @@ h1, h2, h3 {
     transition: all .15s linear;
 }
 
+.btn-bookmarklet span {
+    display: none;
+}
+
+.btn-bookmarklet:before {
+    content: attr(data-text);
+}
+
 .btn:hover {
     background: transparent;
     color: #304947;

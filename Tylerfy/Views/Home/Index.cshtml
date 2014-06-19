@@ -52,8 +52,7 @@
 
             <p><em>Tylerfy</em> any website with our handy bookmarklet. <br/>Just drag it your bookmarks bar and it will replace all images with Tyler.<br/>Enjoy!</p>
 
-            <a href="#" class="btn btn-bounce">Drag to bookmarks</a>
-
+            <a href="javascript:(function(){function swapImages(){var images=document.images;for(var i=0;i<images.length;i++){var image=images[i];image.src='http://placekitten.com/'+image.width+'/'+image.height}}if(document.readyState==='complete'){swapImages()}else{window.addEventListener('load',swapImages)}})();" class="btn btn-bookmarklet btn-bounce" data-text="Drag to bookmarks"><span>Tylerfy!</span></a>
         </div>
     </section>
 
