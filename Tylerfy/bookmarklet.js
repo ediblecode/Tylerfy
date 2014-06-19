@@ -10,7 +10,7 @@
         var images = document.images;
         for (var i = 0; i < images.length; i++) {
             var image = images[i];
-            if (image.getAttribute('data-tylerfied') !== 'true')
+            if (image.getAttribute('data-tylerfied') !== 'true' && image.width > 32 && image.height > 32)
             {
                 image.setAttribute('data-tylerfied', 'true');
                 image.src = 'http://tylerfy.com/g/' + image.width + '/' + image.height + '?nocache=' + Math.round(Math.random() * 10000000);
