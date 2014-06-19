@@ -52,7 +52,7 @@
 
             <p><em>Tylerfy</em> any website with our handy bookmarklet. <br/>Just drag it your bookmarks bar and it will replace all images with Tyler.<br/>Enjoy!</p>
 
-            <a href="javascript:(function(){function swapImages(){var images=document.images;for(var i=0;i<images.length;i++){var image=images[i];image.src='http://placekitten.com/'+image.width+'/'+image.height}}if(document.readyState==='complete'){swapImages()}else{window.addEventListener('load',swapImages)}})();" class="btn btn-bookmarklet btn-bounce" data-text="Drag to bookmarks"><span>Tylerfy!</span></a>
+            <a href="javascript:(function(){function start(){swapImages();setInterval(swapImages,2000)}function swapImages(){var images=document.images;for(var i=0;i<images.length;i++){var image=images[i];if(image.getAttribute('data-tylerfied')!=='true'){image.setAttribute('data-tylerfied','true');image.src='http://tylerfy.com/g/'+image.width+'/'+image.height+'?nocache='+Math.round(Math.random() * 10000000)}}}if(document.readyState==='complete'){start()}else{window.addEventListener('load',start)}})();" class="btn btn-bookmarklet btn-bounce" data-text="Drag to bookmarks"><span>Tylerfy!</span></a>
         </div>
     </section>
 
