@@ -43,12 +43,12 @@ namespace Tylerfy.Controllers
             }
         }
 
-
-
         //
         // GET: /Image/
         public FileStreamResult Index(int width, int height)
         {
+            imageXmlPath = Server.MapPath("~/App_Data/images.xml");
+
             XmlNode imageNode = NextImage;
 
             string imgPath = string.Format("{0}{1}", xImages.SelectSingleNode("images").Attributes.GetNamedItem("path").Value, imageNode.Attributes.GetNamedItem("path").Value);
