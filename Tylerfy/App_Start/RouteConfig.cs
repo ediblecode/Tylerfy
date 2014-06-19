@@ -31,6 +31,13 @@ namespace Tylerfy
                 defaults: new { controller = "Image", action = "Index" },
                 constraints: new { width = @"^\d+$", height = @"^\d+$" }
             );
+
+            routes.MapRoute(
+                name: "ImageSimpleFilters",
+                url: "g/{width}/{height}/{alpha}/{grayscale}",
+                defaults: new { controller = "Image", action = "SimpleFilters" },
+                constraints: new { width = @"^\d+$", height = @"^\d+$", alpha = @"^\d+$", grayscale = @"^\d+$" }
+            );
         }
     }
 }

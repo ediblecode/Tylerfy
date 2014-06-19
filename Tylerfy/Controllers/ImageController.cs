@@ -14,7 +14,13 @@ namespace Tylerfy.Controllers
 {
     public class ImageController : Controller
     {
-        private string imageXmlPath = @"C:\Development\Projects\amaze\Lexus\Tylerfy\Tylerfy\images.xml";
+        private string imageXmlPath
+        {
+            get
+            {
+                return Server.MapPath("~/App_Data/images.xml");
+            }
+        }
 
         private XmlDocument _xImages = null;
         private XmlDocument xImages
@@ -47,8 +53,17 @@ namespace Tylerfy.Controllers
         // GET: /Image/
         public FileStreamResult Index(int width, int height)
         {
-            imageXmlPath = Server.MapPath("~/App_Data/images.xml");
+            return GetImage(width, height, null);
+        }
 
+        public FileStreamResult SimpleFilters(int width, int height, int alpha, int grayscale)
+        {
+            return GetImage(width, height, string.Format("s.alpha={0}&s.grayscale={1}", alpha, grayscale));
+        }
+
+
+        public FileStreamResult GetImage(int width, int height, string extraOpts)
+        {
             XmlNode imageNode = NextImage;
 
             string imgPath = Server.MapPath(string.Format("~/App_Data/{0}", imageNode.Attributes.GetNamedItem("path").Value));
@@ -57,7 +72,7 @@ namespace Tylerfy.Controllers
             FileStream inStream = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
             MemoryStream memStream = new MemoryStream();
 
-            Instructions ins = new Instructions(string.Format("w={0}&h={1}&mode=crop&anchor={2}&{3}", width, height, imgAnchor, Request.Url.Query.Replace("?", "")));
+            Instructions ins = new Instructions(string.Format("w={0}&h={1}&mode=crop&anchor={2}&{3}", width, height, imgAnchor, extraOpts));
             ImageJob job = new ImageJob(inStream, memStream, ins);
             ImageBuilder.Current.Build(job);
 
